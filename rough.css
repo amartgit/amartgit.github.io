@@ -1,0 +1,54 @@
+:root {
+    --bg-primary: #1A202C;    /* Dark Navy for main backgrounds */
+    --bg-secondary: #2D3748;  /* Deep Slate Gray for secondary sections */
+    --bg-tertiary: #4A5568;   /* Charcoal for highlights or sub-sections */
+    --bg-accent: #718096;     /* Soft Gray for accent sections */
+    --bg-light: #F7FAFC;      /* Very Light Gray for content sections */
+    
+    --bs-primary: #2B6CB0;    /* Deep Blue for primary actions (buttons, links) */
+    --bs-secondary: #718096;  /* Muted Gray for secondary actions */
+    --bs-success: #38A169;    /* Vibrant Green for success messages */
+    --bs-danger: #E53E3E;     /* Bright Red for danger/error */
+    --bs-warning: #DD6B20;    /* Orange-Gold for warnings */
+    --bs-info: #319795;       /* Teal for info highlights */
+    --bs-light: #EDF2F7;      /* Light Gray for backgrounds */
+    --bs-dark: #2D3748;       /* Deep Slate Gray for text or dark backgrounds */
+    
+    --text-primary: #E2E8F0;    /* Light Gray for text on dark backgrounds */
+    --text-secondary: #A0AEC0;  /* Muted Light Gray for subheadings */
+    --text-muted: #CBD5E0;      /* Subtle Gray for less prominent text */
+    --text-highlight: #F6AD55;  /* Warm Gold for text highlights */
+    --text-link: #63B3ED;       /* Sky Blue for interactive elements */
+}
+<script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const bodyElement = document.body;
+
+    // Toggle dark mode when the button is clicked
+    toggleButton.addEventListener('click', () => {
+        bodyElement.classList.toggle('dark-mode');
+
+        // Save the user's theme preference in localStorage
+        if (bodyElement.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // Apply saved theme on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            bodyElement.classList.add('dark-mode');
+        }
+    });
+</script>
+
+<div class="social_icon">
+<ul>
+  <li><a href="#"><i class="fa-brands fa-facebook fa-beat fa-border" ></i></a></li>
+  <li><a href="#"><i class="fa-brands fa-linkedin fa-beat fa-border" ></i></a></li>
+  <li><a href="#"><i class="fa-brands fa-instagram fa-border"></i></a></li>
+</ul>
+</div>
